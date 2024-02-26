@@ -1,0 +1,15 @@
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\bin\Debug\netcoreapp3.1\ManagerLayer.deps.json
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\bin\Debug\netcoreapp3.1\ManagerLayer.dll
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\bin\Debug\netcoreapp3.1\ManagerLayer.pdb
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\obj\Debug\netcoreapp3.1\ManagerLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\obj\Debug\netcoreapp3.1\ManagerLayer.AssemblyInfoInputs.cache
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\obj\Debug\netcoreapp3.1\ManagerLayer.AssemblyInfo.cs
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\obj\Debug\netcoreapp3.1\ManagerLayer.csproj.CoreCompileInputs.cache
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\obj\Debug\netcoreapp3.1\ManagerLayer.dll
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\obj\Debug\netcoreapp3.1\ManagerLayer.pdb
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.dll
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.pdb
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\obj\Debug\netcoreapp3.1\ManagerLayer.csproj.AssemblyReference.cache
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\ManagerLayer\obj\Debug\netcoreapp3.1\ManagerLayer.csproj.CopyComplete

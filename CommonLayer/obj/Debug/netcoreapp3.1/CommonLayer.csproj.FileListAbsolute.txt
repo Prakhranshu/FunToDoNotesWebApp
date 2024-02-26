@@ -1,0 +1,9 @@
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.deps.json
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.AssemblyInfoInputs.cache
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.AssemblyInfo.cs
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.csproj.CoreCompileInputs.cache
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.dll
+C:\Users\Prakhar\trainingday1\Trainingday1new\depp\Codes\FunDoNotesApps\CommonLayer\obj\Debug\netcoreapp3.1\CommonLayer.pdb
