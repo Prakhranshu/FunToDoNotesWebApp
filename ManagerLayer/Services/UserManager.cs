@@ -22,9 +22,23 @@ namespace ManagerLayer.Services
             return repository.UserRegistration(model);
         }
 
-        public UserEntity UserLogin(LoginModel model)
+        public string UserLogin(LoginModel model)
         {
             return repository.UserLogin(model);
+        }
+
+        public ForgotPasswordModel ForgotPassword(string email)
+        {
+            return repository.ForgotPassword(email);
+        }
+
+        public string ResetPassword(string email, ResetPasswordModel model)
+        {
+            return repository.ResetPassword(email, model);
+        }
+        public bool CheckEmail(string email)
+        {
+            return repository.CheckEmail(email);
         }
     }
 }
