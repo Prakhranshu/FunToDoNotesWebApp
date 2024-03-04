@@ -87,7 +87,7 @@ namespace FunDoNotesApps.Controllers
 
         }
 
-        /*
+        
         [Authorize]
         [HttpPut]
         [Route("Trash")]
@@ -106,6 +106,8 @@ namespace FunDoNotesApps.Controllers
                 return BadRequest(new ResModel<NotesEntity> { Success = false, Message = "Trash Note Failed", Data = response });
             }
         }
+
+        /*
         [Authorize]
         [HttpDelete]
         [Route("Delete")]

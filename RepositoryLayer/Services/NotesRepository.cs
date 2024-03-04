@@ -76,7 +76,7 @@ namespace RepositoryLayer.Services
             return null;
         }
 
-        /*//Trash Note
+        //Trash Note
         public NotesEntity Trash(int NotesId)
         {
             var trash = context.NotesTable.FirstOrDefault(o => o.NotesId == NotesId);
@@ -96,7 +96,8 @@ namespace RepositoryLayer.Services
             return trash;
 
         }
-        //Delete Note
+        
+        /*//Delete Note
         public NotesEntity DeleteNote(int NotesId, int id)
         {
             var del = context.NotesTable.FirstOrDefault(o => (o.NotesId == NotesId && o.UserId == id));

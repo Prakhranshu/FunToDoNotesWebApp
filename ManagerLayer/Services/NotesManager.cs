@@ -28,11 +28,11 @@ namespace Manager.Services
         {
             return repository.UpdateNote(NotesId, model);
         }
-        /*public NotesEntity Trash(int NotesId)
+        public NotesEntity Trash(int NotesId)
         {
             return repository.Trash(NotesId);
         }
-        public NotesEntity DeleteNote(int NotesId, int id)
+        /*public NotesEntity DeleteNote(int NotesId, int id)
         {
             return repository.DeleteNote(NotesId, id);
         }
