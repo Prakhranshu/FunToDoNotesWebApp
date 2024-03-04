@@ -20,11 +20,11 @@ namespace Manager.Services
         {
             return repository.CreateNote(model, Id);
         }
-        /*public List<NotesEntity> GetNote(int id)
+        public List<NotesEntity> GetNote(int id)
         {
             return repository.GetNote(id);
         }
-        public NotesEntity UpdateNote(int NotesId, UpdateNotesModel model)
+        /*public NotesEntity UpdateNote(int NotesId, UpdateNotesModel model)
         {
             return repository.UpdateNote(NotesId, model);
         }

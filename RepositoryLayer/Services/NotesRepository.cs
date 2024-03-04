@@ -53,13 +53,14 @@ namespace RepositoryLayer.Services
             
         }
 
-        /*
+        
         //Get Note
         public List<NotesEntity> GetNote(int id)
         {
             return context.NotesTable.Where<NotesEntity>(a => a.UserId == id).ToList();
         }
-        //Update Note
+        
+        /*//Update Note
         public NotesEntity UpdateNote(int NotesId, UpdateNotesModel model)
         {
             var noteToUpdate = context.NotesTable.FirstOrDefault(note => note.NotesId == NotesId);

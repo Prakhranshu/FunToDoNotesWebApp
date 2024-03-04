@@ -46,7 +46,7 @@ namespace FunDoNotesApps.Controllers
             
         }
 
-        /*
+        
         [Authorize]
         [HttpGet]
         [Route("{id}", Name = "GetNote")]
@@ -64,6 +64,8 @@ namespace FunDoNotesApps.Controllers
                 return BadRequest(new ResModel<List<NotesEntity>> { Success = false, Message = "Get Note Failure", Data = null });
             }
         }
+
+        /*
         [Authorize]
         [HttpPut]
         [Route("Update")]
