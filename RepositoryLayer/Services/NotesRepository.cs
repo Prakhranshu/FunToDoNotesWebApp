@@ -97,7 +97,7 @@ namespace RepositoryLayer.Services
 
         }
         
-        /*//Delete Note
+        //Delete Note
         public NotesEntity DeleteNote(int NotesId, int id)
         {
             var del = context.NotesTable.FirstOrDefault(o => (o.NotesId == NotesId && o.UserId == id));
@@ -112,7 +112,8 @@ namespace RepositoryLayer.Services
             }
             return del;
         }
-        //Is Archive
+        
+        /*//Is Archive
         public NotesEntity Archive(int NotesId)
         {
             var archive = context.NotesTable.FirstOrDefault(o => o.NotesId == NotesId);

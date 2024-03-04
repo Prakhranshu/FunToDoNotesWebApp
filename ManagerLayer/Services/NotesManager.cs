@@ -32,11 +32,11 @@ namespace Manager.Services
         {
             return repository.Trash(NotesId);
         }
-        /*public NotesEntity DeleteNote(int NotesId, int id)
+        public NotesEntity DeleteNote(int NotesId, int id)
         {
             return repository.DeleteNote(NotesId, id);
         }
-        public NotesEntity Archive(int NotesId)
+        /*public NotesEntity Archive(int NotesId)
         {
             return repository.Archive(NotesId);
         }

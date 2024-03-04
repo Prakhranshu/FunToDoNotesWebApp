@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CommonLayer.RequestModels
 {
-    public class AddLableModel
+    public class AddLabelModel
     {
         public string LabelName { get; set; }
         public int NoteId {get; set;}
