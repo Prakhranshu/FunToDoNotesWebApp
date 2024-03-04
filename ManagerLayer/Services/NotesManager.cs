@@ -24,11 +24,11 @@ namespace Manager.Services
         {
             return repository.GetNote(id);
         }
-        /*public NotesEntity UpdateNote(int NotesId, UpdateNotesModel model)
+        public NotesEntity UpdateNote(int NotesId, UpdateNotesModel model)
         {
             return repository.UpdateNote(NotesId, model);
         }
-        public NotesEntity Trash(int NotesId)
+        /*public NotesEntity Trash(int NotesId)
         {
             return repository.Trash(NotesId);
         }

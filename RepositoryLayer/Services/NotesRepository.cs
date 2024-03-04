@@ -60,7 +60,7 @@ namespace RepositoryLayer.Services
             return context.NotesTable.Where<NotesEntity>(a => a.UserId == id).ToList();
         }
         
-        /*//Update Note
+        //Update Note
         public NotesEntity UpdateNote(int NotesId, UpdateNotesModel model)
         {
             var noteToUpdate = context.NotesTable.FirstOrDefault(note => note.NotesId == NotesId);
@@ -76,7 +76,7 @@ namespace RepositoryLayer.Services
             return null;
         }
 
-        //Trash Note
+        /*//Trash Note
         public NotesEntity Trash(int NotesId)
         {
             var trash = context.NotesTable.FirstOrDefault(o => o.NotesId == NotesId);

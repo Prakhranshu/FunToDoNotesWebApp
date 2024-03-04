@@ -65,7 +65,7 @@ namespace FunDoNotesApps.Controllers
             }
         }
 
-        /*
+        
         [Authorize]
         [HttpPut]
         [Route("Update")]
@@ -87,6 +87,7 @@ namespace FunDoNotesApps.Controllers
 
         }
 
+        /*
         [Authorize]
         [HttpPut]
         [Route("Trash")]
