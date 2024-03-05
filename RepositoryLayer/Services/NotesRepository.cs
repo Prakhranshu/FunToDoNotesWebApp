@@ -189,7 +189,7 @@ namespace RepositoryLayer.Services
         }
         
         
-        /*//Image
+        //Image
         public string UploadImage(string filepath, int NotesId, int Id)
         {
             try
@@ -200,7 +200,7 @@ namespace RepositoryLayer.Services
                     var findNotes = filter.FirstOrDefault(e => e.NotesId == NotesId);
                     if (findNotes != null)
                     {
-                        Account account = new Account("dygoi0kzf", "822117938224726", "***************************");
+                        Account account = new Account("dyybrtodo", "753355191881482", "SLcOwKLXyprIj1clKkqtCjR4-NA");
                         Cloudinary cloudinary = new Cloudinary(account);
                         ImageUploadParams uploadParams = new ImageUploadParams()
                         {
@@ -221,7 +221,9 @@ namespace RepositoryLayer.Services
             catch (Exception) { return null; }
 
         }
-        //AddLable
+        
+        
+        /*//AddLabel
         public LabelEntity AddLabel(int userid, AddLableModel label)
         {
             var add = context.NotesTable.FirstOrDefault(o => (o.NotesId == label.NoteId && o.Id == userid));

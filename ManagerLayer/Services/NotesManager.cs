@@ -52,12 +52,12 @@ namespace Manager.Services
         {
             return repository.Reminder(NotesId);
         }
-        /*public string UploadImage(string filepath, int NotesId, int Id)
+        public string UploadImage(string filepath, int NotesId, int Id)
         {
             return repository.UploadImage(filepath, NotesId, Id);
         }
 
-        public NotesEntity Notes(int noteid)
+        /*public NotesEntity Notes(int noteid)
         {
             return repository.Notes(noteid);
         }*/

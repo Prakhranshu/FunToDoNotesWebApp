@@ -218,7 +218,7 @@ namespace FunDoNotesApps.Controllers
 
         }
         
-        /*[Authorize]
+        [Authorize]
         [HttpPut]
         [Route("UploadImage")]
         public ActionResult UploadImage(string filepath, int NotesId, int Id)
@@ -234,7 +234,8 @@ namespace FunDoNotesApps.Controllers
             }
         }
 
-        [HttpGet]
+        
+        /*[HttpGet]
         [Route ("Get notes")]
         public ActionResult Notes(int Id)
         {
