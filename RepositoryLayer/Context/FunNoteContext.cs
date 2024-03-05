@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Repository.Entity;
 using RepositoryLayer.Entity;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,10 @@ namespace RepositoryLayer.Context
         { }
 
         DbSet<DemoEntity> DemoTable { get; set; }
-        public DbSet<UserEntity> UserTable { get; set; }   
+        public DbSet<UserEntity> UserTable { get; set; }
+        public DbSet<NotesEntity> NotesTable { get; set; }
+        public DbSet<NotesEntity> LabelTable { get; set; }
+
     }
+
 }

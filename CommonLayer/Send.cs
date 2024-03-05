@@ -18,8 +18,8 @@ namespace CommonLayer
             Message.BodyEncoding = Encoding.UTF8;
             Message.IsBodyHtml = true;
 
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com",578);
-            NetworkCredential credential = new NetworkCredential("prakhar2788@gmail.com", "jftw fsfq fmhf neej");
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com",587);
+            NetworkCredential credential = new NetworkCredential(FromEmail, "jftw fsfq fmhf neej");
             
             smtpClient.EnableSsl = true;
             smtpClient.UseDefaultCredentials = false;
@@ -27,6 +27,27 @@ namespace CommonLayer
 
             smtpClient.Send(Message);
             return ToEmail;
+        }
+
+        public string sendconfirmation (string email)
+        {
+            string FromEmail = "prakhar2788@gmail.com";
+            MailMessage Message = new MailMessage(FromEmail, email);
+            string MailBody = "even";
+            Message.Subject = "EVEN";
+            Message.Body = MailBody.ToString();
+            Message.BodyEncoding = Encoding.UTF8;
+            Message.IsBodyHtml = true;
+
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            NetworkCredential credential = new NetworkCredential(FromEmail, "jftw fsfq fmhf neej");
+
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = credential;
+
+            smtpClient.Send(Message);
+            return email;
         }
     }
 }

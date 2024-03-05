@@ -1,12 +1,10 @@
 ﻿using CommonLayer.RequestModels;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -19,33 +17,41 @@ namespace RepositoryLayer.Services
         private readonly FunNoteContext context;
         private readonly IConfiguration config;
 
-        BcryptEncryption bcrypt= new BcryptEncryption();
-
+        private readonly BcryptEncryption bcrypt;
 
         public UserRepository(FunNoteContext context, IConfiguration config)
         {
             this.context = context;
             this.config = config;
-
+            this.bcrypt = new BcryptEncryption();
         }
 
         public UserEntity UserRegistration(RegisterModel model)
         {
-            UserEntity entity =new UserEntity();
-            entity.Firstname = model.Firstname;
-            entity.Lastname = model.Lastname;
-            entity.Useremail = model.Useremail;
-            entity.Userpassword = bcrypt.HashPassGenerator( model.Userpassword);
-            entity.CreateTime = DateTime.Now;
-            entity.LastLoginTime = DateTime.Now;
+            var user = context.UserTable.FirstOrDefault(x=>x.Useremail == model.Useremail);
+            if(user != null)
+            {
+                throw new Exception("User Already Exist");
+            }
+
+            UserEntity entity = new UserEntity
+            {
+                Firstname = model.Firstname,
+                Lastname = model.Lastname,
+                Useremail = model.Useremail,
+                Userpassword = bcrypt.HashPassGenerator(model.Userpassword),
+                CreateTime = DateTime.Now,
+                LastLoginTime = DateTime.Now
+            };
+
             context.UserTable.Add(entity);
             context.SaveChanges();
+
             return entity;
         }
 
         public string UserLogin(LoginModel model)
         {
-
             UserEntity user = context.UserTable.FirstOrDefault(x => x.Useremail == model.useremail);
 
             if (user != null)
@@ -54,21 +60,18 @@ namespace RepositoryLayer.Services
                 {
                     user.LastLoginTime = DateTime.Now;
                     string token = GenerateToken(user.Useremail, user.UserId);
-                    //Console.WriteLine(token);
                     return token;
                 }
                 else
                 {
-                    throw new Exception("Incorrect password");
+                    throw new ArgumentException("Incorrect password");
                 }
             }
             else
             {
-                throw new Exception("Incorrect email");
+                throw new ArgumentException("Incorrect email");
             }
         }
-
-
 
         private string GenerateToken(string Email, int userId)
         {
@@ -76,31 +79,38 @@ namespace RepositoryLayer.Services
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var claims = new[]
             {
-                new Claim("email",Email),
-                new Claim("userId",userId.ToString())
+                new Claim("UserEmail", Email),
+                new Claim("UserId", userId.ToString())
             };
-            var token = new JwtSecurityToken(config["Jwt:Issuer"],
+
+            var token = new JwtSecurityToken(
+                config["Jwt:Issuer"],
                 config["Jwt:Audience"],
-                claims,
+                claims: claims,
                 expires: DateTime.Now.AddHours(15),
                 signingCredentials: credentials);
 
-
             return new JwtSecurityTokenHandler().WriteToken(token);
-
         }
-
-
 
         public ForgotPasswordModel ForgotPassword(string email)
         {
-            var entity = context.UserTable.SingleOrDefault(user => user.Useremail == email);
-            ForgotPasswordModel model = new ForgotPasswordModel();
-            model.UserId = entity.UserId;
-            model.UserEmail = entity.Useremail;
-            model.Token = GenerateToken(email, entity.UserId);
-            return model;
+            var entity = context.UserTable.FirstOrDefault(user => user.Useremail == email);
+
+            if (entity != null)
+            {
+                ForgotPasswordModel model = new ForgotPasswordModel
+                {
+                    UserId = entity.UserId,
+                    UserEmail = entity.Useremail,
+                    Token = GenerateToken(email, entity.UserId)
+                };
+
+                return model;
+            }
+            throw new ArgumentException("User with the specified email does not exist");
         }
+
         public string ResetPassword(string email, ResetPasswordModel model)
         {
             if (model.new_password == model.confirm_password)
@@ -112,10 +122,11 @@ namespace RepositoryLayer.Services
                     context.SaveChanges();
                     return "true";
                 }
-                throw new Exception("Such Email does not exist...");
+                throw new ArgumentException("User with the specified email does not exist");
             }
-            throw new Exception("Password Does not match...");
+            throw new ArgumentException("Password does not match");
         }
+
 
         public bool CheckEmail(string email)
         {
@@ -123,11 +134,6 @@ namespace RepositoryLayer.Services
             return user != null;
         }
 
-        //public bool ResetPassword(string Email, ForgotPassword model, )
-
-
-
-
-
+        
     }
 }

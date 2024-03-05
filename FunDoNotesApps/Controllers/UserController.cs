@@ -8,11 +8,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
-using RepositoryLayer.Migrations;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using MassTransit;
 
 namespace FunDoNotesApps.Controllers
 {
@@ -21,12 +23,16 @@ namespace FunDoNotesApps.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserManager usermanager;
-        private IBus bus;
-
-        public UserController(IUserManager usermanager, IBus bus)
+        private readonly IBus bus;
+        private readonly ILogger<UserController> logger;    
+        /*private readonly FunNoteContext context;
+*/
+        public UserController(IUserManager usermanager, IBus bus, ILogger<UserController> logger)
         {
             this.usermanager = usermanager;
             this.bus = bus;
+            this.logger = logger;
+            /*this.context = context;*/
         }
 
         [HttpPost]
@@ -42,6 +48,7 @@ namespace FunDoNotesApps.Controllers
 
                 if (response != null)
                 {
+                    logger.LogInformation("Register Successful");
                     return Ok(new ResModel<UserEntity> { Success = true, Message = "register successfully", Data = response });
                 }
                 else
@@ -57,6 +64,7 @@ namespace FunDoNotesApps.Controllers
             }
         }
 
+        
         [HttpPost]
         [Route("Log")]
         public ActionResult Login(LoginModel model)
@@ -79,6 +87,7 @@ namespace FunDoNotesApps.Controllers
             }
         }
 
+        
         [HttpPost]
         [Route("ForgotPassword")]
         public async Task<ActionResult> ForgotPassword(string Email)
@@ -93,7 +102,7 @@ namespace FunDoNotesApps.Controllers
                     Uri uri = new Uri("rabbitmq://localhost/FunfooNotesEmailQueue");
                     var endPoint = await bus.GetSendEndpoint(uri);
                     await endPoint.Send(model);
-                    return Ok(new ResModel<string> { Success = true, Message = str, Data = model.Token });
+                    return Ok(new ResModel<bool> { Success = true, Message = str, Data = true });
                 }
                 else
                 {
@@ -102,7 +111,7 @@ namespace FunDoNotesApps.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ResModel<string> { Success = false, Message = ex.Message, Data = null });
+                return BadRequest(new ResModel<bool> { Success = false, Message = ex.Message, Data = false });
             }
         }
         [Authorize]
@@ -112,7 +121,7 @@ namespace FunDoNotesApps.Controllers
         {
             try
             {
-                string email = User.FindFirst("Email").Value;
+                string email = User.FindFirst("UserEmail").Value;
                 return Ok(new ResModel<string>
                 {
                     Success = true,
@@ -128,6 +137,31 @@ namespace FunDoNotesApps.Controllers
                     Message = ex.Message,
                     Data = "Password reset unsuccessful"
                 });
+            }
+        }
+
+        [HttpPost]
+        [Route ("test")]
+        public ActionResult Test(int i, string email)
+        {
+            
+            try
+            {
+                if(i%2==0)
+                {
+                    Send mail = new Send();
+                    string str = mail.sendconfirmation(email);
+                    //string str="Even";
+                    /*Uri uri = new Uri("rabbitmq://localhost/FunfooNotesEmailQueue");
+                    var endPoint = await bus.GetSendEndpoint(uri);
+                    await endPoint.Send(email);*/
+                    return Ok(new ResModel<bool> { Success = true, Message = str, Data = true });
+                }
+                return Ok(new ResModel<bool> { Success = true, Message = "odd", Data = true });
+            }
+            catch (Exception)
+            {
+                return BadRequest("catch error");
             }
         }
 
