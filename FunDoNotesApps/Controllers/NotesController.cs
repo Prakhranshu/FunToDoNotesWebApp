@@ -135,7 +135,6 @@ namespace FunDoNotesApps.Controllers
             }
         }
 
-        /*
         [Authorize]
         [HttpPut]
         [Route("Archive")]
@@ -184,7 +183,8 @@ namespace FunDoNotesApps.Controllers
             }
 
         }
-        [Authorize]
+        
+        /*[Authorize]
         [HttpPut]
         [Route("Colour")]
         public ActionResult Colour(int NotesId)

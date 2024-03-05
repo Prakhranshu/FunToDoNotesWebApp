@@ -36,7 +36,7 @@ namespace Manager.Services
         {
             return repository.DeleteNote(NotesId, id);
         }
-        /*public NotesEntity Archive(int NotesId)
+        public NotesEntity Archive(int NotesId)
         {
             return repository.Archive(NotesId);
         }
@@ -44,7 +44,7 @@ namespace Manager.Services
         {
             return repository.Pin(NotesId);
         }
-        public NotesEntity Colour(int NotesId)
+        /*public NotesEntity Colour(int NotesId)
         {
             return repository.Colour(NotesId);
         }

@@ -113,7 +113,7 @@ namespace RepositoryLayer.Services
             return del;
         }
         
-        /*//Is Archive
+        //Is Archive
         public NotesEntity Archive(int NotesId)
         {
             var archive = context.NotesTable.FirstOrDefault(o => o.NotesId == NotesId);
@@ -136,6 +136,8 @@ namespace RepositoryLayer.Services
             }
 
         }
+        
+        
         //Is Pin
         public NotesEntity Pin(int NotesId)
         {
@@ -159,7 +161,9 @@ namespace RepositoryLayer.Services
             }
 
         }
-        //Colour
+        
+        
+        /*//Colour
         public NotesEntity Colour(int NotesId)
         {
             var color = context.NotesTable.FirstOrDefault(o => o.NotesId == NotesId);
