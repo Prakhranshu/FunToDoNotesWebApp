@@ -175,7 +175,8 @@ namespace RepositoryLayer.Services
             return color;
 
         }
-        /*//Reminder
+        
+        //Reminder
         public NotesEntity Reminder(int NotesId)
         {
             var remind = context.NotesTable.FirstOrDefault(o => o.NotesId == NotesId);
@@ -186,7 +187,9 @@ namespace RepositoryLayer.Services
             }
             return remind;
         }
-        //Image
+        
+        
+        /*//Image
         public string UploadImage(string filepath, int NotesId, int Id)
         {
             try

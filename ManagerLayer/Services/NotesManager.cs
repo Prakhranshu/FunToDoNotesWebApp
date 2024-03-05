@@ -48,11 +48,11 @@ namespace Manager.Services
         {
             return repository.Colour(NotesId, colour);
         }
-        /*public NotesEntity Reminder(int NotesId)
+        public NotesEntity Reminder(int NotesId)
         {
             return repository.Reminder(NotesId);
         }
-        public string UploadImage(string filepath, int NotesId, int Id)
+        /*public string UploadImage(string filepath, int NotesId, int Id)
         {
             return repository.UploadImage(filepath, NotesId, Id);
         }

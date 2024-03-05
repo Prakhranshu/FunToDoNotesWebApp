@@ -16,8 +16,8 @@ namespace Repository.Interfaces
         public NotesEntity Archive(int NotesId);
         public NotesEntity Pin(int NotesId);
         public NotesEntity Colour(int NotesId, string colour);
-        /*public NotesEntity Reminder(int NotesId);
-        public string UploadImage(string filepath, int NotesId, int Id);
+        public NotesEntity Reminder(int NotesId);
+        /*public string UploadImage(string filepath, int NotesId, int Id);
 
         public NotesEntity Notes(int noteid);*/
     }

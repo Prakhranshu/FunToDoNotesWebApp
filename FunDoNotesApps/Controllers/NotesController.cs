@@ -201,7 +201,7 @@ namespace FunDoNotesApps.Controllers
             }
         }
         
-        /*[Authorize]
+        [Authorize]
         [HttpPut]
         [Route("Remind")]
         public ActionResult Remind(int NotesId)
@@ -217,7 +217,8 @@ namespace FunDoNotesApps.Controllers
             }
 
         }
-        [Authorize]
+        
+        /*[Authorize]
         [HttpPut]
         [Route("UploadImage")]
         public ActionResult UploadImage(string filepath, int NotesId, int Id)
