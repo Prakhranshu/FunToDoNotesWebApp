@@ -163,19 +163,19 @@ namespace RepositoryLayer.Services
         }
         
         
-        /*//Colour
-        public NotesEntity Colour(int NotesId)
+        //Colour
+        public NotesEntity Colour(int NotesId, string colour)
         {
             var color = context.NotesTable.FirstOrDefault(o => o.NotesId == NotesId);
             if (color != null)
             {
-                color.Colour = "Blue";
+                color.Colour = colour;
                 context.SaveChanges();
             }
             return color;
 
         }
-        //Reminder
+        /*//Reminder
         public NotesEntity Reminder(int NotesId)
         {
             var remind = context.NotesTable.FirstOrDefault(o => o.NotesId == NotesId);

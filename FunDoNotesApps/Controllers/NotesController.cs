@@ -184,13 +184,13 @@ namespace FunDoNotesApps.Controllers
 
         }
         
-        /*[Authorize]
+        [Authorize]
         [HttpPut]
         [Route("Colour")]
-        public ActionResult Colour(int NotesId)
+        public ActionResult Colour(int NotesId, string colour)
         {
 
-            var response = inotesManager.Colour(NotesId);
+            var response = inotesManager.Colour(NotesId, colour);
             if (response != null)
             {
                 return Ok(new ResModel<NotesEntity> { Success = true, Message = "Colour Note Success", Data = response });
@@ -200,7 +200,8 @@ namespace FunDoNotesApps.Controllers
                 return BadRequest(new ResModel<NotesEntity> { Success = false, Message = "Colour Note Failed", Data = response });
             }
         }
-        [Authorize]
+        
+        /*[Authorize]
         [HttpPut]
         [Route("Remind")]
         public ActionResult Remind(int NotesId)

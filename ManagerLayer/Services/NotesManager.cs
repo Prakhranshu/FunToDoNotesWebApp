@@ -44,11 +44,11 @@ namespace Manager.Services
         {
             return repository.Pin(NotesId);
         }
-        /*public NotesEntity Colour(int NotesId)
+        public NotesEntity Colour(int NotesId, string colour)
         {
-            return repository.Colour(NotesId);
+            return repository.Colour(NotesId, colour);
         }
-        public NotesEntity Reminder(int NotesId)
+        /*public NotesEntity Reminder(int NotesId)
         {
             return repository.Reminder(NotesId);
         }
