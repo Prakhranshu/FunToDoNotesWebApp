@@ -117,7 +117,7 @@ namespace FunDoNotesApps.Controllers
             try
             {
                 int idd = Convert.ToInt32(User.FindFirst("userId").Value);
-                var response = inotesManager.DeleteNote(NotesId, idd);
+                var response = inotesManager.DeleteNote(NotesId, id);
                 if (response != null)
                 {
 
